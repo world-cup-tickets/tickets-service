@@ -46,4 +46,8 @@ public class TicketService {
             newTicket.reservationDate()
         );
     }
+
+    public void deleteTicket(UUID ticketId) {
+        ticketRepository.deleteTicketById(ticketId);
+    }
 }

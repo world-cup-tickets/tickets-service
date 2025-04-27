@@ -1,5 +1,6 @@
 package ro.upb.acs.worldcuptickets.ticketservice.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,5 +33,10 @@ public class TicketController {
     @PostMapping("matches/{matchId}")
     public TicketResponse createTicket(@PathVariable UUID matchId, @RequestBody CreateTicketRequest createTicketRequest) {
         return ticketService.createTicket(matchId, createTicketRequest);
+    }
+
+    @DeleteMapping("/{ticketId}")
+    public void deleteTicket(@PathVariable UUID ticketId) {
+        ticketService.deleteTicket(ticketId);
     }
 }
