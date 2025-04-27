@@ -1,3 +1,6 @@
 spring:
   application:
     name: ticket-service
+
+db-service:
+  url: http://localhost:8082
