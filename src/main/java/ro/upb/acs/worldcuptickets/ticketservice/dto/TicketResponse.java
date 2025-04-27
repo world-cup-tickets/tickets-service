@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public record TicketDto(
+public record TicketResponse(
     UUID id,
     @JsonProperty("user_id") UUID userId,
     @JsonProperty("match_id") UUID matchId,
