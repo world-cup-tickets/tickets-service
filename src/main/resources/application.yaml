@@ -9,7 +9,23 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080
+          issuer-uri: ${ISSUER_URI:http://localhost:8080}
 
 db-service:
-  url: http://localhost:8082
+  url: ${DB_SERVICE_URL:http://localhost:8082}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health,info
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    enable:
+      all: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
